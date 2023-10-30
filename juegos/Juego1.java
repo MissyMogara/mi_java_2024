@@ -78,6 +78,7 @@ public class Juego1 {
         }
 
         sc.close();
+        System.out.println((int)2/(int)10);
 
     }
     
