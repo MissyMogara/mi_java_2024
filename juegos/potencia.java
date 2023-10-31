@@ -46,6 +46,7 @@ public class potencia {
             System.out.println("La base tiene que ser un double y el exponente un entero");
         }
         sc.close();
+    
     }
 
 }
