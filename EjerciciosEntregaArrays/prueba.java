@@ -1,4 +1,4 @@
-package EjerciciosEntrega3;
+package EjerciciosEntregaArrays;
 
 import java.util.Arrays;
 import java.util.Scanner;

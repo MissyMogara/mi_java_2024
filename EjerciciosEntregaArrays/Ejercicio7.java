@@ -1,9 +1,9 @@
-package EjerciciosEntrega3;
+package EjerciciosEntregaArrays;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class EjercicioArray7 {
+public class Ejercicio7 {
     /**
      * Función que genera un número aleatorio entre un valor mínimo y máximo
      * 
