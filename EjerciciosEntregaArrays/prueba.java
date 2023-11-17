@@ -23,6 +23,8 @@ public class prueba {
         System.out.println("Array después del desplazamiento hacia la derecha: " + Arrays.toString(array));
 
         sc.close();
+        int arrayxd[][] = new int[4][7];
+        System.out.println(arrayxd.length); 
     }
 
     public static void rellenarArray(int array[]) {
@@ -45,4 +47,5 @@ public class prueba {
     public static int generarNumero(int min, int max) {
         return (int) (Math.random() * (max - min + 1) + min);
     }
+    
 }
