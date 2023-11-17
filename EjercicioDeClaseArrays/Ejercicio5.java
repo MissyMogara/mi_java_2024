@@ -1,121 +1,111 @@
 package EjercicioDeClaseArrays;
 
+import java.util.Arrays;
+
+/**
+ * Función que le pasas como parámetro un índice y un char ('f' o 'c') y debe devolver un
+ * array con la fila o la columna i de esa matriz si existe. Primero comprobar que el índice sea
+ * correcto.
+ */
+
 public class Ejercicio5 {
     /**
-     * Te devuelve la fila o columna indicada por número de la tabla.
-     * Si el caracter c es 'f' te devuelve esa fila
-     * Si el caracter c es 'c' te devuelve la columna
-     * 
-     * @param numero
-     * @param c
-     * @param array
-     * @return
+     * Función que genera un número aleatorio entre un valor mínimo y máximo
+     * @param min
+     * @param max
+     * @return número aleatorio entre min y max, incluidos
      */
-    public int[] devuelveParte(int numero, char c, int array[][]) throws Exception {
-
-        // Check numero is valid
-        if (numero >= array.length && c == 'f') {
-            throw new Exception("Número de filas no válido");
-        }
-
-        if (numero >= array[0].length && c == 'c') {
-            throw new Exception("Número de columnas no válido");
-        }
-
-        if (numero < 0) {
-            throw new Exception("Número negativo no es válido");
-        }
-
-        // Return row column with numero
-        if (c == 'f') {
-            return array[numero];
-        }
-
-        // Return column with numero
-        if (c == 'c') {
-            // Create array aux
-            int aux[] = new int[array[0].length];
-
-            for (int j = 0; j < array[0].length; j++) {
-                aux[j] = array[j][numero];
-            }
-            return aux;
-        }
-        return null;
+    public static int generarNumero(int min, int max)  {
+        return  (int) ((Math.random() * (max - min + 1) + min)) ;
     }
 
     /**
-     * Proceso para pintar un arraybidimensional
-     * 
-     * @param array
-     */
-    public static void pintarArrayBidimensional(int[][] array) {
-        // Recorre las filas del array bidimensional
-        for (int i = 0; i < array.length; i++) {
-            // Recorre las columnas de la fila actual
-            for (int j = 0; j < array[i].length; j++) {
-                // Imprime el valor del array
-                System.out.print(array[i][j] + "\t");
+     * Función para pintar por consola los valores de una matriz de enteros
+     * @param matriz
+     *      */
+    public static void pintarMatriz(int matriz[][]) {
+        for(int i=0; i<matriz.length; i++) {
+            for(int j=0; j<matriz[0].length; j++) {
+                System.out.print(matriz[i][j] + " ");
             }
-            // Nueva línea después de cada fila
             System.out.println();
         }
     }
 
     /**
-     * Función que genera un número aleatorio entre un valor mínimo y máximo
-     * 
-     * @param min
-     * @param max
-     * @return número aleatorio entre min y max, incluidos
+     * Te devuelve la fila o columna indicada por número de la tabla
+     * Si el caracter c es 'f' te devuelve esa fila
+     * Si el caracter c es 'c' te devuelve esa columna
+     * @param numero
+     * @param c
+     * @param tabla
+     * @return
+     * @throws Exception
      */
-    public static int generarNumero(int min, int max) throws Exception {
-        /* Sí min > max, lanzamos Exception "min debe ser menor que max" */
+    public static int[] devuelveParte(int numero, char c, int tabla[][]) throws Exception  {
 
-        if (min > max) {
-            throw new Exception("El valor mínimo no puede ser mayor que el máximo");
+        //Check numero is valid
+        if (numero >= tabla.length && c == 'f') {
+            throw new Exception("Número de fila no válido");
         }
-        return (int) (Math.random() * (max - min + 1) + min);
-    }
+        if (numero >= tabla[0].length && c == 'c') {
+            throw new Exception("Número de columna no válido");
+        }
+        if (numero < 0) {
+            throw new Exception("Número negativo no es válido");
+        }
 
-    /**
-     * Proceso que rellena automaticamente un array con números aleatorios
-     * 
-     * @param array
-     */
-    public static void rellenarArrayBi(int array[][]) {
-        try {
+        //Return row with numero
+        if (c == 'f') {
+            return tabla[numero];
+        }
 
-            for (int i = 0; i < array.length; i++) {
+        //Return column with numero
+        if (c == 'c') {
+            //Create array aux with column size
+            int aux[] = new int[tabla[0].length];
 
-                for (int j = 0; j < array[i].length; j++) {
-                    array[i][j] = generarNumero(1, 100);
-                }
-
+            //0, numero
+            //1, numero
+            //2, numero
+            // ...
+            // Para objetener una columna se deja fija la columna, y se va moviendo la fila
+            for(int j=0; j<tabla.length; j++) {
+                aux[j] = tabla[j][numero];
             }
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+
+            return aux;
         }
 
+        return null;
     }
 
     public static void main(String[] args) {
-
         
+        int tabla[][] = new int[5][5];
+
+        for(int i=0; i < tabla.length; i++) {            //FILAS
+            for(int j=0; j < tabla[0].length; j++) {     //COLUMNAS                    
+                tabla[i][j] = generarNumero(100, 500);
+            }
+        }
+
+        pintarMatriz(tabla);
 
         try {
 
-            int array[][] = new int[5][5];
-            rellenarArrayBi(array);
-            int aux[] = new int[array[0].length];
+            int aux[] = devuelveParte(4,'c', tabla);
+            System.out.println( Arrays.toString(aux)  ); //Devuelve la fila 1
 
-            aux[] = devuelveParte(1,'f', array[][]);
+            int aux2[] = devuelveParte(3,'f', tabla);
+            System.out.println( Arrays.toString(aux2)  ); //Devuelve la fila 1
+
             
-
         } catch (Exception e) {
-          System.out.println(e.getMessage());
-            
+            System.out.println(e.getMessage());
         }
+
+
 
     }
 }
