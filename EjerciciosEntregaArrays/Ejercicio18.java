@@ -59,46 +59,37 @@ public class Ejercicio18 {
     }
 
     /**
-     * Este proceso copia una matriz a otra matriz
+     * Este proceso copia una matriz a otra matriz realizando su versión de hoja de
+     * cálculo
      * 
      * @param matriz
      * @param matrizAux
      */
-    public static void copiarFilasMatriz(int[][] matriz, int matrizAux[][]) {
+    public static void hojaCalculo(int[][] matriz, int matrizAux[][]) {
+
+        System.out.println(matrizAux.length);
+        System.out.println(matrizAux[0].length);
 
         // Recorre las filas del array bidimensional
         for (int i = 0; i < matrizAux.length; i++) {
 
-            for (int j = 0; j < (matrizAux[i].length-1); j++) {
-                // Recorre las columnas de la fila actual
+            for (int j = 0; j < (matrizAux[i].length); j++) {
+                // Si llega al final de la columna pintará la suma de la columna excepto en la
+                // esquina inferior derecha
                 if (i == (matrizAux.length - 1) && j != (matrizAux[i].length - 1)) {
                     matrizAux[i][j] = sumaColumna(j, matriz);
+                    // Si llega al final de la fila pintara la suma de las filas anteriores excepto
+                    // Si llega a la esquina inferior derecha
                 } else if (j == (matrizAux[i].length - 1) && (i != matrizAux.length - 1)) {
                     matrizAux[i][j] = sumaFila(i, matriz);
-                
+                    // Si llega a la esquina inferior derecha pintará tanto la suma de la suma de
+                    // todas las filas como de las columnas
                 } else if (i == (matrizAux.length - 1) && j == (matrizAux[i].length - 1)) {
-                    matrizAux[i][j] = sumaColumna(j, matrizAux) + sumaFila(j, matrizAux);
+                    matrizAux[i][j] = sumaColumna(j, matrizAux) + sumaFila(i, matrizAux);
                 } else {
+                    // Sino entonces seguirá copiando la matriz como hace normalmente
                     matrizAux[i][j] = matriz[i][j];
-                } 
-            }
-
-        }
-    }
-
-    public static void realizarHojaCalculo(int[][] matriz) {
-
-        // Recorre las filas del array bidimensional
-        for (int i = 0; i < matriz.length; i++) {
-
-            for (int j = 0; j < matriz[i].length; j++) {
-
-                if (i == (matriz.length - 1) && j != (matriz[i].length - 1)) {
-                    sumaColumna(j, matriz);
-                } else if (j == (matriz[i].length - 1) && (i != matriz.length - 1)) {
-                    sumaFila(i, matriz);
                 }
-
             }
 
         }
@@ -154,7 +145,7 @@ public class Ejercicio18 {
 
         System.out.println();
         int hojaCalculo[][] = new int[matriz.length + 1][matriz[0].length + 1];
-        copiarFilasMatriz(matriz, hojaCalculo);
+        hojaCalculo(matriz, hojaCalculo);
 
         pintarArrayBidimensional(hojaCalculo);
 
