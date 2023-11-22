@@ -95,6 +95,7 @@ public class Ejercicio20 {
 
         int x = 0;
         int o = 0;
+        int vacio = 0;
         /* Comprueba las columnas */
         for (int i = 0; i < tablero.length; i++) {
 
@@ -136,19 +137,73 @@ public class Ejercicio20 {
                 return victoriaJugador(x, o);
             }
         }
-        /*Comprueba la diagonal */
+        /* Comprueba la diagonal */
         for (int i = 0; i < tablero.length; i++) {
 
             for (int j = 0; j < tablero.length; j++) {
 
-                if (j + i == tablero[i].length-1) {
-                    
-                    
-                    
+                if (j == i) {
+
+                    if (tablero[i][j] == 'x') {
+                        x += 1;
+                    } else if (tablero[i][j] == 'o') {
+                        o += 1;
+                    }
+
                 }
-               
+
+            }
+
+        }
+        /* Acaba la partida cuando alguien hace un 3 en raya */
+        if (victoriaJugador(x, o) == 0) {
+            x = 0;
+            o = 0;
+        } else if (victoriaJugador(x, o) != 0) {
+            return victoriaJugador(x, o);
+        }
+        /* Comprueba la diagonal inversa */
+        for (int i = 0; i < tablero.length; i++) {
+
+            for (int j = 0; j < tablero.length; j++) {
+
+                if (j + i == tablero[i].length - 1) {
+
+                    if (tablero[i][j] == 'x') {
+                        x += 1;
+                    } else if (tablero[i][j] == 'o') {
+                        o += 1;
+                    }
+
+                }
+
+            }
+
+        }
+        /* Acaba la partida cuando alguien hace un 3 en raya */
+        if (victoriaJugador(x, o) == 0) {
+            x = 0;
+            o = 0;
+        } else if (victoriaJugador(x, o) != 0) {
+            return victoriaJugador(x, o);
+        }
+        /* Comprobamos si esta lleno todo el campo */
+        for (int i = 0; i < tablero.length; i++) {
+
+            for (int j = 0; j < tablero.length; j++) {
+                /* Comprobamos si hay algun hueco vacio */
+                if (tablero[i][j] == '-') {
+                    vacio += 1;
+
+                }
             }
         }
+        /*Si no hay ningún hueco es un empate */
+        if (vacio == 0) {
+            return 0;
+        }
+        /* Reiniciamos el contador */
+        vacio = 0;
         return -1;
     }
 
@@ -242,9 +297,18 @@ public class Ejercicio20 {
                 default:
                     System.out.println("Se acabó la partida");
                     break;
+
             }
 
         }
-
+        /* Comprobación del resultado de victoria */
+        if (acabaPartida == true && finPartida(tablero3enRaya) == 1) {
+            System.out.println("*Gana el jugador 1*");
+        } else if (acabaPartida == true && finPartida(tablero3enRaya) == 2) {
+            System.out.println("*Gana el jugador 2*");
+        } else if (acabaPartida == true && finPartida(tablero3enRaya) == 0) {
+            System.out.println("*Empate*");
+        }
+        sc.close();
     }
 }
