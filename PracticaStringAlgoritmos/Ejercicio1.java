@@ -38,5 +38,6 @@ public class Ejercicio1 {
             cadenaInvertida += cadenaNormal.charAt(i);
         }
         System.out.println(cadenaInvertida);
+        sc.close();
     }
 }
