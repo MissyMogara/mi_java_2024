@@ -39,5 +39,10 @@ public class Ejercicio1 {
         }
         System.out.println(cadenaInvertida);
         sc.close();
+        String prueba = "hola";
+        String prueba2 = "epep";
+        String prueba3 = "";
+        prueba3 = prueba + prueba2;
+        System.out.println(prueba3);
     }
 }
