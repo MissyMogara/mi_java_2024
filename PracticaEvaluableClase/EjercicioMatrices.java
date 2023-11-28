@@ -160,7 +160,7 @@ public class EjercicioMatrices {
 
             }
             if (((j - 1) >= 0 && (j - 1) <= 7) && ((i - 2) >= 0 && (i - 2) <= 7)) {
-                if (tablero[i - 1][j - 2].equals("W") || tablero[i - 1][j - 2].equals("B")) {
+                if (tablero[i - 2][j - 1].equals("W") || tablero[i - 2][j - 1].equals("B")) {
                     System.out.println("El caballo puede moverse arriba dos y izquierda uno.");
                 }
 
