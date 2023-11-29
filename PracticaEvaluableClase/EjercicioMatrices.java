@@ -121,60 +121,51 @@ public class EjercicioMatrices {
         /* Comprobamos si hay un caballo en esa posicion */
         if (tablero[i][j].equals("BL") || tablero[i][j].equals("WL")) {
             System.out.println("Hay un caballo.");
-            // No he conseguido hacer funcionar al caballo, solo detecta si hay un caballo
+            
             /*
              * Si lo hay vamos a comprobar si se sale del tablero en alguno de los 8
              * movimientos que puede hacer
              */
 
             if (((j - 2) >= 0 && (j - 2) <= 7) && ((i + 1) >= 0 && (i + 1) <= 7)) {
-                if (tablero[i + 1][j - 2].equals("W") || tablero[i + 1][j - 2].equals("B")) {
-                    System.out.println("El caballo puede moverse a izquierda dos y abajo uno.");
-                }
+
+                System.out.println("El caballo puede moverse a izquierda dos y abajo uno.");
 
             }
             if (((j - 2) >= 0 && (j - 2) <= 7) && ((i - 1) >= 0 && (i - 1) <= 7)) {
-                if (tablero[i - 1][j - 2].equals("W") || tablero[i - 1][j - 2].equals("B")) {
-                    System.out.println("El caballo puede moverse a izquierda dos y arriba uno.");
-                }
+
+                System.out.println("El caballo puede moverse a izquierda dos y arriba uno.");
 
             }
             if (((j + 2) >= 0 && (j + 2) <= 7) && ((i + 1) >= 0 && (i + 1) <= 7)) {
-                if (tablero[i + 1][j + 2].equals("W") || tablero[i + 1][j + 2].equals("B")) {
-                    System.out.println("El caballo puede moverse a derecha dos y abajo uno.");
 
-                }
+                System.out.println("El caballo puede moverse a derecha dos y abajo uno.");
 
             }
             if (((j + 2) >= 0 && (j + 2) <= 7) && ((i + 1) >= 0 && (i + 1) <= 7)) {
-                if (tablero[i + 1][j + 2].equals("W") || tablero[i + 1][j - 2].equals("B")) {
-                    System.out.println("El caballo puede moverse a derecha dos y arriba uno.");
-                }
+
+                System.out.println("El caballo puede moverse a derecha dos y arriba uno.");
 
             }
 
             if (((j - 1) >= 0 && (j - 1) <= 7) && ((i + 2) >= 0 && (i + 2) <= 7)) {
-                if (tablero[i + 2][j - 1].equals("W") || tablero[i + 2][j - 1].equals("B")) {
-                    System.out.println("El caballo puede moverse abajo dos y izquierda uno.");
-                }
+
+                System.out.println("El caballo puede moverse abajo dos y izquierda uno.");
 
             }
             if (((j - 1) >= 0 && (j - 1) <= 7) && ((i - 2) >= 0 && (i - 2) <= 7)) {
-                if (tablero[i - 2][j - 1].equals("W") || tablero[i - 2][j - 1].equals("B")) {
-                    System.out.println("El caballo puede moverse arriba dos y izquierda uno.");
-                }
+
+                System.out.println("El caballo puede moverse arriba dos y izquierda uno.");
 
             }
             if (((j + 1) >= 0 && (j + 1) <= 7) && ((i + 2) >= 0 && (i + 2) <= 7)) {
-                if (tablero[i + 2][j + 1].equals("W") || tablero[i + 2][j + 1].equals("B")) {
-                    System.out.println("El caballo puede moverse abajo dos y derecha uno.");
-                }
+
+                System.out.println("El caballo puede moverse abajo dos y derecha uno.");
 
             }
             if (((j + 1) >= 0 && (j + 1) <= 7) && ((i - 2) >= 0 && (i - 2) <= 7)) {
-                if (tablero[i - 2][j + 1].equals("W") || tablero[i - 2][j + 1].equals("B")) {
-                    System.out.println("El caballo puede moverse arriba dos y derecha uno.");
-                }
+
+                System.out.println("El caballo puede moverse arriba dos y derecha uno.");
 
             }
 
@@ -265,7 +256,6 @@ public class EjercicioMatrices {
         coordenadasAjedrez(0, 3);
 
         pintarMovimientosCaballo(7, 6, tableroAjederez);
-        System.out.println(tableroAjederez[5][7]);
 
     }
 }
