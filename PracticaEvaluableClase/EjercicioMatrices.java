@@ -121,7 +121,7 @@ public class EjercicioMatrices {
         /* Comprobamos si hay un caballo en esa posicion */
         if (tablero[i][j].equals("BL") || tablero[i][j].equals("WL")) {
             System.out.println("Hay un caballo.");
-            
+            // No he conseguido hacer funcionar al caballo, solo detecta si hay un caballo
             /*
              * Si lo hay vamos a comprobar si se sale del tablero en alguno de los 8
              * movimientos que puede hacer
