@@ -33,7 +33,20 @@ indicándolo y también indica el número de pasos que has dado desde el inicio 
 encontrar la salida. */
 
 public class Laberinto {
-     /**
+    /**
+     * función que genera un número aleatorio entre el mínimo y el máximo
+     * 
+     * @param min mínimo
+     * @param max máximo
+     * @return
+     */
+    public static int generarAleatorio(int min, int max) {
+        int n;
+        n = (int) (Math.random() * (max + 1 - min)) + min;
+        return n;
+    }
+
+    /**
      * Proceso para pintar un arraybidimensional
      * 
      * @param matriz
@@ -44,7 +57,7 @@ public class Laberinto {
             // Recorre las columnas de la fila actual
             for (int j = 0; j < matriz[i].length; j++) {
                 // Imprime el valor del array
-                System.out.print(matriz[i][j] + "\t");
+                System.out.print(matriz[i][j] + " ");
             }
             // Nueva línea después de cada fila
             System.out.println();
@@ -62,7 +75,7 @@ public class Laberinto {
             for (int i = 0; i < matriz.length; i++) {
 
                 for (int j = 0; j < matriz[i].length; j++) {
-                    if (j == 0) {
+                    if (j == 0 || j == matriz[0].length - 1) {
                         matriz[i][j] = "|";
                     } else if ((i == 0 || i == (matriz.length - 1)) && j != 0) {
                         matriz[i][j] = "-";
@@ -79,14 +92,59 @@ public class Laberinto {
 
     }
 
+    /**
+     * Este proceso generará en un tablaro la salida en los bordes sin contar la
+     * coordenada (0,0)
+     * 
+     * @param matriz tablero
+     */
+    public static void generarSalida(String matriz[][]) {
+        int y = generarAleatorio(0, matriz.length - 1);
+        int x = 0;
+        int aleatorio = -1;
+
+        /* Comprobamos si el eje y esta en 0 o en su máxima longitud */
+        if (y == 0 || y == matriz.length - 1) {
+            if (y == 0) {
+
+                /*
+                 * Si es 0 la generación de número aleatorio irá de 1 a la máxima longitud del
+                 * eje X
+                 */
+                x = generarAleatorio(1, matriz[0].length - 1);
+
+            } else {
+                /*
+                 * Por otro lado si el eje Y es la longitud máxima el número aleatorio ira de 0
+                 * a la máxima longitud del eje X
+                 */
+                x = generarAleatorio(0, matriz[0].length - 1);
+
+            }
+        } else {
+            /*
+             * Si el valor del eje Y no esta entre 0 o su longitud máxima entonces
+             * generaremos un valor aleatorio entre 0 o 1, si es 0 el eje X será 0, si es 1,
+             * el eje X será su longitud máxima
+             */
+            aleatorio = generarAleatorio(0, 1);
+            if (aleatorio == 0) {
+                x = 0;
+            } else {
+                x = matriz[0].length - 1;
+            }
+        }
+        matriz[y][x] = "#";
+    }
+
     public static void main(String[] args) {
 
         String tablero[][] = new String[20][20];
         rellenarTablero(tablero);
 
-        pintarMatriz(tablero);
+        generarSalida(tablero);
 
-        
+        pintarMatriz(tablero);
 
     }
 
