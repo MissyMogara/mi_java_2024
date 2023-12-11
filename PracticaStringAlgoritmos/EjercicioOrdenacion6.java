@@ -64,7 +64,7 @@ public class EjercicioOrdenacion6 {
         }
         Arrays.sort(arrayAux);
     }
-
+    
     public static void main(String[] args) {
 
         /*
