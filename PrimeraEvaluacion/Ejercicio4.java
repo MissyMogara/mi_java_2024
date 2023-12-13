@@ -140,7 +140,7 @@ public class Ejercicio4 {
 
             /*Colocamos el barco */
             colocarBarco(3, 3, "Arriba", 2, 'l', tablero);
-
+            colocarBarco(7, 3, "Derecha", 3, 's', tablero);
             pintarMatriz(tablero);
 
         } catch (Exception e) {
