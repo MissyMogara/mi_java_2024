@@ -1,4 +1,4 @@
-package Trimestre1.PrimeraEvaluacion;
+package PrimeraEvaluacion;
 
 /*Nos piden crear una matriz 10×10 de caracteres, que inicialmente rellenaremos
 con la letra ‘a’ (agua). Vamos, ha simular el juego “Batalla Naval”. Tienes que implementar:

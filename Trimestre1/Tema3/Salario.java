@@ -1,4 +1,4 @@
-package Trimestre1.Tema3;
+package Tema3;
 
 import java.util.Scanner;
 

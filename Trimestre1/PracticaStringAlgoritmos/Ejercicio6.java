@@ -1,4 +1,4 @@
-package Trimestre1.PracticaStringAlgoritmos;
+package PracticaStringAlgoritmos;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package Trimestre1.PrimeraEvaluacion;
+package PrimeraEvaluacion;
 
 import java.util.Arrays;
 import java.util.Scanner;

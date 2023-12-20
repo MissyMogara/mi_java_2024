@@ -1,4 +1,4 @@
-package Trimestre1.MisEjercicios;
+package MisEjercicios;
 class ConteoAB2 {
    
     public static void main (String[] args) {

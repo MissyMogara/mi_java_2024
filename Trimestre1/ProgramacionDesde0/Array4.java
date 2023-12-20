@@ -1,4 +1,4 @@
-package Trimestre1.ProgramacionDesde0;
+package ProgramacionDesde0;
 
 public class Array4 {
     public static void main(String[] args) {

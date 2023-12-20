@@ -1,4 +1,4 @@
-package Trimestre1.Tema3.EjerciciosExamen;
+package Tema3.EjerciciosExamen;
 
 import java.util.Scanner;
 

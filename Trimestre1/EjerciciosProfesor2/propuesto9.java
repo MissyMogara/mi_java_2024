@@ -16,16 +16,7 @@ public class propuesto9 {
          */ 
         
         
-        switch (mes) {
-            case 1,3,5,7,8,10,12:  //31 dias
-                if ()
-                break;
 
-            //falta case para 30 y 28 dias
-
-            default:
-                break;
-        }
 
     }
     

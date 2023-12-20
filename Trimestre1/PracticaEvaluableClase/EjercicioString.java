@@ -1,4 +1,4 @@
-package Trimestre1.PracticaEvaluableClase;
+package PracticaEvaluableClase;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package Trimestre1.PracticaStringAlgoritmos;
+package PracticaStringAlgoritmos;
 
 public class Ejercicio7 {
     public static void main(String[] args) {

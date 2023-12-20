@@ -1,4 +1,4 @@
-package Trimestre1;
+
 public class Fecha {
 
     private int day,month,year;

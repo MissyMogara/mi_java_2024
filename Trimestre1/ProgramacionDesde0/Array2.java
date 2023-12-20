@@ -1,4 +1,4 @@
-package Trimestre1.ProgramacionDesde0;
+package ProgramacionDesde0;
 
 import java.util.Scanner;
 

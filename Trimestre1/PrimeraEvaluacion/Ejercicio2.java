@@ -1,4 +1,4 @@
-package Trimestre1.PrimeraEvaluacion;
+package PrimeraEvaluacion;
 
 /*Craps. Es un juego de dados muy facil, y consiste en arrojar la suma de 2 dados,
 y su suma es 7 u 11 ganas la partida. En cambio, si sacas un 2, 3 o 12 pierdes. Con cualquier
